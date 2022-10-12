@@ -1,0 +1,48 @@
+.card--container{
+  width: 100%;
+  height: 100%;
+
+  .card--content {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    display: flex;
+    transform-style: preserve-3d;
+    transition: 0.707s transform;
+
+    .card--front, .card--back {
+      height: 100%;
+      width: 100%;
+      min-width: 100%;
+      backface-visibility: hidden; 
+      overflow: hidden;
+      
+      .feature--badge{
+        position: absolute;
+        right: -30px;
+        font-size: 1rem;
+        rotate: 45deg;
+        top: 20px;
+        padding: 5px 30px;
+      }
+    }
+
+    .card--back {
+      transform: rotateY(-180deg) translate(100%, 0);
+
+      .card-img-top {
+        transform: rotateY(180deg);
+        opacity: 0.5;
+      }
+
+      .tags {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+.card--container:hover .card--content {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+}
